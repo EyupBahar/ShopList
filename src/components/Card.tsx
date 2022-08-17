@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../app/hooks";
-import { Trash2 } from "react-feather";
-import { deleteItem } from "../features/deleteItemSlice";
 
 type IData = {
   data: any;
@@ -9,12 +6,6 @@ type IData = {
 };
 
 const Card = ({ data, to }: IData) => {
-  const dispatch = useAppDispatch();
-
-  const handleClick = async () => {
-    await dispatch(deleteItem(data._id));
-    window.location.reload();
-  };
   const truncate = (str: string, n: number) => {
     return str?.length > n ? str.substr(0, n - 3) + "..." : str;
   };
@@ -31,11 +22,10 @@ const Card = ({ data, to }: IData) => {
       <div className="w-4/5 flex justify-between">
         <div>
           <p className="lowercase first-letter:uppercase pt-3 px-2 truncate text-base text-left">
-            {truncate(data?.name, 15)}
+            {truncate(data?.name, 20)}
           </p>
           <p className="pb-6 text-sm text-center">$ {data?.price}</p>
         </div>
-        <Trash2 className="w-8 mt-3" onClick={handleClick} />
       </div>
     </div>
   );
