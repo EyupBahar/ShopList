@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:ital,wght@0,200;0,500;1,400&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ecedec;
+}
+
+@layer base {
+  .debug-r {
+    @apply border-[1px] border-red-500;
+  }
+  .navbar-text {
+    @apply font-bold italic text-base sm:text-lg;
+  }
+}
