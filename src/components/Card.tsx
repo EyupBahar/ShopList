@@ -12,7 +12,7 @@ const Card = ({ data, to }: IData) => {
   const dispatch = useAppDispatch();
 
   const handleClick = async () => {
-    await dispatch(deleteItem(data.id));
+    await dispatch(deleteItem(data._id));
     window.location.reload();
   };
   const truncate = (str: string, n: number) => {
@@ -35,13 +35,7 @@ const Card = ({ data, to }: IData) => {
           </p>
           <p className="pb-6 text-sm text-center">$ {data?.price}</p>
         </div>
-        <Trash2 className="w-8 mt-3" />
-        {/*  <img
-          onClick={handleClick}
-          className="invisible group-hover:visible w-8 pr-2 cursor-pointer"
-          src={trash}
-          alt="delete"
-        /> */}
+        <Trash2 className="w-8 mt-3" onClick={handleClick} />
       </div>
     </div>
   );

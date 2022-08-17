@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type ProductState = {
-  products: [];
+  products: any;
   selectedProduct: any;
   loading: boolean;
   error: string;
@@ -20,7 +20,7 @@ export const fetchProducts = createAsyncThunk(
     return fetch(`https://upayments-studycase-api.herokuapp.com/api/products`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthcmFhaG1ldGhrbkBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vaGFrYW5rYXJhYWhtZXQiLCJpYXQiOjE2NjA2NTM3NDMsImV4cCI6MTY2MTA4NTc0M30.xV1kFFBWZo8vH7i1tOCU3Xbr1WGytZcEulkYktsb-1s"}`,
+        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV5dXBiaHIyNEBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vRXl1cEJhaGFyIiwiaWF0IjoxNjYwNzQ0MjA3LCJleHAiOjE2NjExNzYyMDd9.h0JHRKI73HJ7qrofAzJrQ0lR_CxyDofZulY2_gAKMiQ"}`,
       },
     }).then((res) => res.json().then((data) => data.products));
   }
@@ -30,11 +30,11 @@ export const getProduct = createAsyncThunk(
   "products/getProduct",
   async (id: any) => {
     return fetch(
-      ` https://upayments-studycase-api.herokuapp.com/api/products/${id}`,
+      `https://upayments-studycase-api.herokuapp.com/api/products/${id}`,
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkV5dXBiaHIyNEBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vRXl1cEJhaGFyIiwiaWF0IjoxNjYwNjc5NDM4LCJleHAiOjE2NjExMTE0Mzh9.MYCv0frK5e6DMcr-4bHUfo6EFx74NXlthJkW9hvzwvg"}`,
+          Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV5dXBiaHIyNEBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vRXl1cEJhaGFyIiwiaWF0IjoxNjYwNzQ0MjA3LCJleHAiOjE2NjExNzYyMDd9.h0JHRKI73HJ7qrofAzJrQ0lR_CxyDofZulY2_gAKMiQ"}`,
         },
       }
     ).then((res) => res.json());

@@ -14,7 +14,7 @@ interface FormValues {
   description: string;
   avatar: string;
   category: string;
-  price: string;
+  price: number;
 }
 
 const AddItem = () => {
@@ -27,7 +27,7 @@ const AddItem = () => {
     name: "",
     avatar: "",
     developerEmail: "eyupbhr24@gmail.com",
-    price: "",
+    price: 0,
     id: Date.now(),
     category: "",
     description: "",

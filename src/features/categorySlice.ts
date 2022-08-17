@@ -20,7 +20,7 @@ export const getCategories = createAsyncThunk(
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkV5dXBiaHIyNEBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vRXl1cEJhaGFyIiwiaWF0IjoxNjYwNjc5NDM4LCJleHAiOjE2NjExMTE0Mzh9.MYCv0frK5e6DMcr-4bHUfo6EFx74NXlthJkW9hvzwvg"}`,
+          Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV5dXBiaHIyNEBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vRXl1cEJhaGFyIiwiaWF0IjoxNjYwNzQ0MjA3LCJleHAiOjE2NjExNzYyMDd9.h0JHRKI73HJ7qrofAzJrQ0lR_CxyDofZulY2_gAKMiQ"}`,
         },
       }
     ).then((res) => res.json().then((data) => data.categories));
