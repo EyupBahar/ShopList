@@ -6,9 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 const Detail = () => {
   const dispatch = useAppDispatch();
   const { itemId } = useParams();
-  console.log("itemId >", itemId);
   const { selectedProduct } = useAppSelector((state) => state.products);
-  console.log("selectedProduct", selectedProduct);
 
   useEffect(() => {
     dispatch(getProduct(itemId));

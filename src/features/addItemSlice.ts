@@ -13,7 +13,6 @@ const initialState: AddProductState = {
 export const addProduct = createAsyncThunk(
   "products/addProduct",
   async (values: any) => {
-    console.log("values", values);
     return fetch("https://upayments-studycase-api.herokuapp.com/api/products", {
       method: "POST",
       headers: {

@@ -4,7 +4,6 @@ import { getCategories } from "../features/categorySlice";
 
 const Filter = ({ handleFilter, category }: any) => {
   const { categories } = useAppSelector((state) => state?.categories);
-  console.log("categories", categories);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

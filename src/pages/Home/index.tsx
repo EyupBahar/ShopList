@@ -11,7 +11,6 @@ const Home = () => {
   const [category, setCategory] = useState("All");
   const [search, setSearch] = useState("");
   const { products } = useAppSelector((state) => state?.products);
-  console.log("items from home", products);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
